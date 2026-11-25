@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f1117;
+  color: #e8e8ea;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+}
+
+.navbar {
+  padding: 18px 32px;
+  background: #151821;
+  border-bottom: 1px solid #23273a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.logo span {
+  color: #f5c518;
+}
+
+main {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 32px 24px 60px;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  padding-left: 12px;
+  border-left: 4px solid #f5c518;
+}
+
+#movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #1a1d29;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.7);
+}
+
+.poster {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background: #23273a;
+}
+
+.score {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 9px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #111;
+  background: #f5c518;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.score.mid {
+  background: #e0883a;
+}
+
+.score.top {
+  background: #4cd37b;
+}
+
+.info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 40px 14px 14px;
+  background: linear-gradient(to top, rgba(10, 11, 16, 0.95) 40%, transparent);
+  transform: translateY(30%);
+  transition: transform 0.25s ease;
+}
+
+.card:hover .info {
+  transform: translateY(0);
+}
+
+.title {
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.date {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #a5a8b8;
+}
+
+.card.no-poster .poster {
+  visibility: hidden;
+}
